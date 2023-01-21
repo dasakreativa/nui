@@ -1,0 +1,46 @@
+.card {
+    box-shadow: $box-shadow;
+    border: 0;
+
+    .card-header, .card-footer {
+        border: 0;
+        background: $white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .card-header {
+        padding: $card-spacer-y $card-spacer-x 0 $card-spacer-x;
+        
+        .card-header-title {
+            .card-title {
+                font-size: $h4-font-size;
+                font-weight: 600;
+                color: $dark;
+                margin-bottom: .375rem;
+            }
+            .card-subtitle {
+                color: $gray-700;
+                font-size: $font-size-base;
+            }
+        }
+        .card-toolbar {
+            margin-left: auto;
+
+            .btn-toolbar {
+                min-height: 1.25rem;
+                min-width: 1.25rem;
+                padding: .5rem;
+
+                &:after {
+                    display: none;
+                    content: '';
+                }
+            }
+        }
+    }
+    .card-footer {
+        padding: $card-spacer-y 0 $card-spacer-x $card-spacer-x;
+    }
+}

@@ -1,0 +1,111 @@
+@mixin alert-solid-variant($name, $background, $border: $background, $color: color-contrast($background)) {
+    --#{$prefix}alert-color: #{$color};
+    --#{$prefix}alert-bg: #{$background};
+    --#{$prefix}alert-border-color: #{$border};
+
+    @extend .bg-#{$name};
+    border-color: $border;
+
+    .alert-link {
+        color: tint-color($color, 15%);
+    }
+
+    .alert-icon {
+        font-size: 2.5rem;
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+        margin-right: $alert-padding-x;
+        height: fit-content;
+        flex-shrink: 0;
+    }
+
+    .alert-text {
+        @if $name == 'light' {
+            color: shade-color($light, 50%);
+        } @else {
+            color: tint-color($background, 85%);
+        }
+    }
+    .alert-title {
+        color: color-contrast($background);
+        font-size: $h4-font-size;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    &.alert-dismissible {
+        padding: $alert-padding-y $alert-padding-x !important;
+    }
+
+    .btn-alert-close {
+        align-self: start;
+        margin-left: auto;
+        font-size: 1.25em;
+        padding: 0;
+        outline: 0;
+        color: rgba(color-contrast($background), .5);
+
+        &:hover, &:focus {
+            outline: 0;
+            color: rgba(color-contrast($background), .75);
+        }
+    }
+}
+
+@mixin alert-soft-variant($name, $bg, $background: rgba($bg, .15), $border: rgba($bg, .15), $color: darken($bg, 10%)) {
+    --#{$prefix}alert-soft-color: #{$color};
+    --#{$prefix}alert-soft-bg: #{$background};
+    --#{$prefix}alert-soft-border-color: #{$border};
+
+    @extend .bg-soft-#{$name};
+    border-color: $border;
+
+    @if $name == 'light' {
+        border-color: shade-color($bg, 15%);
+    }
+
+    .alert-link {
+        color: tint-color($color, 15%);
+    }
+
+    .alert-icon {
+        font-size: 2.5rem;
+        min-width: 2.5rem;
+        min-height: 2.5rem;
+        margin-right: $alert-padding-x;
+        height: fit-content;
+        flex-shrink: 0;
+    }
+
+    .alert-text {
+        @if $name == 'light' {
+            color: shade-color($light, 60%);
+        } @else {
+            color: shade-color($bg, 40%);
+        }
+    }
+    .alert-title {
+        color: shade-color($bg, 75%);
+        font-size: $h4-font-size;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+    }
+
+    &.alert-dismissible {
+        padding: $alert-padding-y $alert-padding-x !important;
+    }
+
+    .btn-alert-close {
+        align-self: start;
+        margin-left: auto;
+        font-size: 1.25em;
+        color: rgba($bg, .75);
+        padding: 0;
+        outline: 0;
+
+        &:hover, &:focus {
+            outline: 0;
+            color: rgba($bg, .75);
+        }
+    }
+}

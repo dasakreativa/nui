@@ -1,0 +1,13 @@
+.dropdown-menu {
+    padding: var(--bs-dropdown-padding-y) var(--bs-dropdown-padding-x);
+    box-shadow: $box-shadow;
+    border: 0;
+
+    .dropdown-item {
+        border-radius: var(--#{$prefix}border-radius);
+    }
+
+    .dropdown-divider {
+        margin: var(--bs-dropdown-divider-margin-y) .5rem;
+    }
+}

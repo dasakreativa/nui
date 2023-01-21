@@ -1,0 +1,32 @@
+@use 'sass:math';
+
+$i: 0;
+@while $i <= 1500 {
+    .transition-#{$i} {
+        @if $i == 0 {
+            transition-duration: none;
+        } @else {
+            transition-duration: #{math.div($i, 1000)}s;
+        }
+    }
+
+    $i: $i + 100;
+}
+
+.transition {
+    &-all {
+        transition-property: all;
+    }
+    
+    &-border {
+        transition-property: border;
+    }
+
+    &-color {
+        transition-property: color;
+    }
+
+    &-font-size {
+        transition-property: font-size;
+    }
+}

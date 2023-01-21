@@ -1,0 +1,72 @@
+.checkradio {
+    padding: .75rem 1.25rem;
+    border-radius: $border-radius;
+    border: 1px dashed $gray-300;
+    outline: 0;
+    cursor: pointer;
+    transition: all .2s;
+    display: flex;
+
+    .checkradio-input {
+        display: none;
+    }
+
+    .checkradio-title {
+        font-size: $h4-font-size;
+        font-weight: 600;
+    }
+    .checkradio-desc {
+        font-size: $font-size-base;
+        color: $gray-600;
+    }
+
+    // Variants
+    &.has-indicator {
+        &:before {
+            display: inline-flex;
+            content: '';
+            width: 1.825rem;
+            height: 1.825rem;
+            border-radius: $border-radius-pill;
+            background: $gray-200;
+            align-self: center;
+            margin-right: .75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+            vertical-align: middle;
+        }
+    }
+    
+    // State
+    &.hover {
+        background-color: rgba($primary, .125);
+        color: $primary;
+        border-color: rgba($primary, .5);
+
+        &:before {
+            background: rgba($primary, .25);
+        }
+    }
+    &.active {
+        background-color: rgba($primary, .125);
+        color: $primary;
+        border-color: rgba($primary, .5);
+
+        &:before {
+            background: $primary;
+            color: $white;
+            border: 0;
+            content: '\f00c';
+            font: normal 900 1em 'Font Awesome 6 Free';
+            
+            @at-root .indicator-rb#{&} {
+                border: .5rem solid $primary;
+                background: $white;
+                content: '';
+                font: unset;
+            }
+        }
+    }
+}

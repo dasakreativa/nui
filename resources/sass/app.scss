@@ -1,0 +1,18 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700;800&display=swap');
+
+// Bootstrap
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+
+// Components
+@import './mixins';
+@import './components';
+@import './utils';
+
+// Vendor Icons
+@import '~@fortawesome/fontawesome-free/css/all.css';
+@import '~boxicons/css/animations.css';
+@import '~boxicons/css/transformations.css';
+@import '~boxicons/css/boxicons.css';
+@import '~remixicon/fonts/remixicon.css';

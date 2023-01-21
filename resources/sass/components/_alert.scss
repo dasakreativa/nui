@@ -1,0 +1,9 @@
+@each $name, $value in $theme-colors {
+    .alert-#{$name} {
+        @include alert-solid-variant($name, $value);
+    }
+
+    .alert-soft-#{$name} {
+        @include alert-soft-variant($name, $value);
+    }
+}

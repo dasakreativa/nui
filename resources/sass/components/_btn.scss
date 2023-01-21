@@ -1,0 +1,30 @@
+@each $name, $value in $theme-colors {
+    .btn-s-#{$name} {
+        @extend .btn-#{$name};
+        @extend .bg-soft-#{$name};
+        border-color: transparent;
+    }
+
+    .btn-w-#{$name} {
+        @extend .btn-#{$name};
+
+        background-color: var(--#{$prefix}white);
+        border-color: var(--#{$prefix}white);
+        font-weight: 600;
+
+        @if $name == 'light' {
+            color: var(--#{$prefix}dark);
+        } @else {
+            color: var(--#{$prefix}#{$name});
+        }
+    }
+
+    .btn-ws-#{$name} {
+        @extend .btn-#{$name};
+
+        background-color: rgba(var(--#{$prefix}white-rgb), .25);
+        border-color: transparent;
+        color: var(--#{$prefix}white);
+        font-weight: 600;
+    }
+}

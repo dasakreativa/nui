@@ -1,0 +1,12 @@
+.form-control {
+    outline: 1px solid transparent;
+    outline-offset: 0px;
+    transition: all .1s;
+
+    &:focus {
+        outline: 2px solid $primary;
+        outline-offset: 3px;
+        border-color: tint-color($primary, 20%);
+        box-shadow: unset;
+    }
+}

@@ -1,0 +1,38 @@
+@use 'sass:math';
+
+@each $name, $value in $theme-colors {
+    .bg-#{$name} {
+        --#{$prefix}rgb-color: #{$value};
+        --#{$prefix}text-color: #{color-contrast($value)};
+
+        background: $value;
+        background-color: $value;
+        color: color-contrast($value);
+    }
+
+    .bg-soft-#{$name} {        
+        @if $name == 'light' {
+            background: $gray-200;
+            background-color: $gray-200;
+            color: $dark;
+        } @else {
+            background: rgba($value, .15);
+            background-color: rgba($value, .15);
+            color: darken($value, 10%);
+        }
+    }
+
+    .bg-hover-#{$name}:hover {
+        @extend .bg-#{$name};
+    }
+    .bg-soft-hover-#{$name}:hover {
+        @extend .bg-soft-#{$name};
+    }
+}
+@each $name, $value in $grays {
+    .bg-gray-#{$name} {
+        background: $value;
+        background-color: $value;
+        color: color-contrast($value);
+    }
+}

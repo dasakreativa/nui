@@ -1,0 +1,15 @@
+.badge {
+    line-height: 1;
+    vertical-align: middle;
+    @extend .text-decoration-none;
+
+    @each $name, $value in $theme-colors {
+        &.text-bg-soft-#{$name} {
+            @extend .bg-soft-#{$name};
+    
+            @at-root a#{&}:hover {
+                @extend .bg-#{$name};
+            }
+        }
+    }
+}

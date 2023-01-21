@@ -1,0 +1,128 @@
+// Background Opacity Variant
+$background-opacity: (
+    "0": 0,
+    "5": 5,
+    "10": 10,
+    "20": 20,
+    "25": 25,
+    "50": 50,
+    "100": 100,
+) !default;
+
+$spacer: 1rem !default;
+$spacers: (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+) !default;
+
+// Colors
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+) !default;
+
+$blue:    #1E2EDE !default;
+$indigo:  #3A0CA3 !default;
+$purple:  #7209B7 !default;
+$pink:    #F72585 !default;
+$red:     #FF1B1C !default;
+$orange:  #FF7F11 !default;
+$yellow:  #fdc20f !default;
+$green:   #04E762 !default;
+$teal:    #20c997 !default;
+$cyan:    #38b5f3 !default;
+
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-900 !default;
+
+$theme-colors: (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+) !default;
+
+$min-contrast-ratio:   1.5 !default;
+
+$body-bg:                       $white !default;
+$body-color:                    $gray-700 !default;
+
+$border-color-translucent:      rgba($gray-700, .1) !default;
+$border-color:                  $gray-300 !default;
+
+$input-border-color:            $border-color !default;
+
+$card-color:                    $body-color !default;
+$card-cap-bg:                   $gray-100 !default;
+
+// Typography
+$font-family-sans-serif:        'Karla', sans-serif !default;
+$line-height-base:              1.5 !default;
+
+$font-size-root:                null !default;
+$font-size-base:                .875rem !default; // Asumsikan bahwa ukuran teks umumnya adalah 16px
+$font-size-sm:                  $font-size-base * .875 !default;
+$font-size-lg:                  $font-size-base * 1.25 !default;
+
+$h1-font-size:                  $font-size-base * 2.975 !default;
+$h2-font-size:                  $font-size-base * 2.25 !default;
+$h3-font-size:                  $font-size-base * 1.825 !default;
+$h4-font-size:                  $font-size-base * 1.325 !default;
+$h5-font-size:                  $font-size-base * 1.125 !default;
+$h6-font-size:                  $font-size-base !default;
+
+$popover-font-size:             $font-size-base !default;
+
+// Box Shadows
+$box-shadow-sm:                 0 4px 16px 8px rgb($gray-500, 5%) !default;
+$box-shadow:                    0 8px 20px 8px rgb($gray-500, 7.5%) !default;
+$box-shadow-lg:                 0 12px 32px 16px rgb($gray-600, 7.5%) !default;
+
+// Cards, Badge and Alerts
+$alert-padding-x:               1.25rem !default;
+$alert-padding-y:               1.25rem !default;
+
+$card-spacer-x:                 1.25rem !default;
+$card-spacer-y:                 1.25rem !default;
+
+$badge-padding-y:               $spacer * .375 !default;
+$badge-padding-x:               $spacer * .625 !default;
+
+// Dropdown
+$dropdown-padding-y:                $spacer * .5;
+$dropdown-padding-x:                $spacer * .5;
+$dropdown-item-padding-y:           $spacer * .5 !default;
+$dropdown-item-padding-x:           $spacer !default;
