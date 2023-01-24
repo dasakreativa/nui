@@ -1,0 +1,156 @@
+.sidebar-fixed {
+	.sidebar {
+		max-width: 320px;
+		width: 280px;
+		height: 100vh;
+		transition: all .2s;
+		display: flex;
+		flex-direction: column;
+		position: fixed;
+
+		// Sidebar Header
+		.sidebar-header {
+			display: flex;
+			height: 70px;
+			align-items: center;
+			padding: 0 1.5rem;
+
+			.sidebar-link {
+				text-decoration: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				img {
+					max-height: 48px;
+
+					@include media-breakpoint-up('md') {
+						&.logo-lg {
+							display: inline-flex;
+						}
+
+						&.logo-sm {
+							display: none;
+						}
+					}
+				}
+			}
+
+			.sidebar-button {
+				border: 0;
+				transition: all .2s;
+				background-color: transparent;
+				width: auto;
+				padding: 0;
+				align-self: center;
+				justify-content: center;
+				align-items: center;
+				display: flex;
+				margin-left: auto;
+
+				&:hover {
+					color: $primary;
+				}
+			}
+		}
+
+		.sidebar-widget {
+			padding: 1rem 1.5rem;
+		}
+
+		// Menu Wrapper
+		.sidebar-body {
+			margin: .5rem 0;
+
+			ul {
+				list-style: none;
+				padding: 0;
+
+				li {
+					&.title {
+						font-size: 1.1em;
+						font-weight: 600;
+						text-transform: uppercase;
+						padding: .5rem 1.5rem;
+					}
+
+					a {
+						padding: .5rem 1.5rem;
+						display: flex;
+						transition: all .2s;
+						text-decoration: none;
+						position: relative;
+						color: $gray-600;
+						line-height: 1;
+						align-items: center;
+						gap: .5rem;
+
+						i {
+							font-size: 1.1em;
+							min-width: 1.5rem;
+							min-height: 1.5rem;
+							display: inline-flex;
+							align-items: center;
+							justify-content: center;
+						}
+
+						&.has-arrow::after {
+							border: unset !important;
+							content: '\f054';
+							font-family: 'Font Awesome 6 Free';
+							font-weight: 900;
+							transform-origin: unset;
+							position: relative;
+							top: unset;
+							transform: rotate(0);
+							width: 1.5rem;
+							display: flex;
+							font-size: .875em;
+							align-items: center;
+							justify-content: center;
+							inset-inline-end: unset;
+							height: 1.5rem;
+							margin-left: auto;
+						}
+
+						&:hover,
+						&:active,
+						&[aria-expanded=true] {
+							color: $dark;
+						}
+					}
+
+					&.mm-active {
+						>a {
+							color: $dark;
+
+							&::after {
+								transform: rotate(90deg);
+							}
+						}
+					}
+
+					ul {
+						li {
+							padding-left: 2rem;
+
+							ul {
+								padding: 0;
+								margin-left: 1.5rem;
+								border-left: 1px solid $gray-300;
+
+								li {
+									padding-left: 0 !important;
+
+									a {
+										padding: .5rem 1rem;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

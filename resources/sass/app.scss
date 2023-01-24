@@ -3,16 +3,18 @@
 
 // Bootstrap
 @import 'variables';
-@import '~bootstrap/scss/bootstrap';
+@import 'bootstrap';
 
 // Components
 @import './mixins';
 @import './components';
 @import './utils';
+@import './nui';
 
 // Vendor Icons
-@import '~@fortawesome/fontawesome-free/css/all.css';
-@import '~boxicons/css/animations.css';
-@import '~boxicons/css/transformations.css';
-@import '~boxicons/css/boxicons.css';
-@import '~remixicon/fonts/remixicon.css';
+@import '@fortawesome/fontawesome-free/css/all.css';
+@import 'boxicons/css/animations.css';
+@import 'boxicons/css/transformations.css';
+@import 'boxicons/css/boxicons.css';
+@import 'remixicon/fonts/remixicon.css';
+

@@ -1,16 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Nusantara UI Kit</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
+    <!-- Scripts -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}" />
+    <script defer src="{{ mix('js/app.js') }}"></script>
 </head>
 <body class="bg-light">
     <div class="container my-5">
+        <div class="card card-body mb-3">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Dropdown button
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="card card-body mb-3">
             <input type="text" class="form-control" placeholder="Testing" />
 
@@ -28,21 +43,23 @@
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="modalSmall" tabindex="-1" aria-labelledby="modalSmallLabel" aria-hidden="true">
+                <div class="modal fade" id="modalSmall" tabindex="-1" aria-labelledby="modalSmallLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-sm">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="modalSmallLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalSmallLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -55,19 +72,20 @@
                 <!-- Modal -->
                 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
                     <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="modalLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -78,46 +96,53 @@
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="modalLarge" tabindex="-1" aria-labelledby="modalLargeLabel" aria-hidden="true">
+                <div class="modal fade" id="modalLarge" tabindex="-1" aria-labelledby="modalLargeLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="modalLargeLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalLargeLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
             <div id="modal-xlarge">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalXtraLarge">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#modalXtraLarge">
                     Modal Extra Large
                 </button>
 
                 <!-- Modal -->
-                <div class="modal fade" id="modalXtraLarge" tabindex="-1" aria-labelledby="modalXtraLargeLabel" aria-hidden="true">
+                <div class="modal fade" id="modalXtraLarge" tabindex="-1" aria-labelledby="modalXtraLargeLabel"
+                    aria-hidden="true">
                     <div class="modal-dialog modal-xl">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="modalXtraLargeLabel">Modal title</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="modalXtraLargeLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ...
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
                         </div>
-                        <div class="modal-body">
-                        ...
-                        </div>
-                        <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -125,8 +150,13 @@
 
         <div class="card card-body mb-3">
             <div>
-                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-custom-class="custom-tooltip" data-bs-title="This top tooltip is themed via CSS variables.">Custom tooltip</button>
-                <a tabindex="0" class="btn btn-danger" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Dismissible popover" data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
+                <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top"
+                    data-bs-custom-class="custom-tooltip"
+                    data-bs-title="This top tooltip is themed via CSS variables.">Custom tooltip</button>
+                <a tabindex="0" class="btn btn-danger" role="button" data-bs-toggle="popover"
+                    data-bs-trigger="focus" data-bs-title="Dismissible popover"
+                    data-bs-content="And here's some amazing content. It's very engaging. Right?">Dismissible
+                    popover</a>
             </div>
         </div>
 
@@ -221,14 +251,19 @@
                 </div>
                 <div class="card-toolbar">
                     <div class="dropdown">
-                        <button class="btn btn-toolbar btn-light dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-toolbar btn-light dropdown-toggle" type="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-ellipsis-h"></i>
                         </button>
                         <ul class="dropdown-menu">
-                            <li><h6 class="dropdown-header">Dropdown header</h6></li>
+                            <li>
+                                <h6 class="dropdown-header">Dropdown header</h6>
+                            </li>
                             <li><a class="dropdown-item" href="#">Action</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
                     </div>
@@ -240,7 +275,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -250,7 +286,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -260,7 +297,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -270,7 +308,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -280,7 +319,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -290,7 +330,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -300,7 +341,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -310,7 +352,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -322,7 +365,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -332,7 +376,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.ut!</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.ut!</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -342,7 +387,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -352,7 +398,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -362,7 +409,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -372,7 +420,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -382,7 +431,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -392,7 +442,8 @@
                         <i class="fa-solid fa-exclamation-triangle alert-icon"></i>
                         <div class="d-flex flex-column me-2">
                             <h3 class="alert-title">This is an alert</h3>
-                            <div class="alert-text">The alert component can be used to highlight certain parts of your page for higher content visibility.</div>
+                            <div class="alert-text">The alert component can be used to highlight certain parts of your
+                                page for higher content visibility.</div>
                         </div>
                         <button data-bs-dismiss="alert" aria-label="Close" class="btn-alert-close btn">
                             <i class="fa-solid fa-close"></i>
@@ -548,62 +599,72 @@
                     <input type="radio" name="test" id="form-1" class="checkradio-input" />
                     <div class="checkradio-wrapper">
                         <div class="checkradio-title">Test</div>
-                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been customized.</div>
+                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been
+                            customized.</div>
                     </div>
                 </label>
                 <label for="form-2" class="checkradio indicator-rb has-indicator">
                     <input type="radio" name="test" id="form-2" class="checkradio-input" />
                     <div class="checkradio-wrapper">
                         <div class="checkradio-title">Test</div>
-                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been customized.</div>
+                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been
+                            customized.</div>
                     </div>
                 </label>
                 <label for="form-3" class="checkradio indicator-rb has-indicator">
                     <input type="radio" name="test" id="form-3" class="checkradio-input" />
                     <div class="checkradio-wrapper">
                         <div class="checkradio-title">Test</div>
-                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been customized.</div>
+                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been
+                            customized.</div>
                     </div>
                 </label>
                 <label for="form-4" class="checkradio indicator-rb has-indicator">
                     <input type="radio" name="test" id="form-4" class="checkradio-input" />
                     <div class="checkradio-wrapper">
                         <div class="checkradio-title">Test</div>
-                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been customized.</div>
+                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been
+                            customized.</div>
                     </div>
                 </label>
                 <label for="form-5" class="checkradio indicator-rb has-indicator">
                     <input type="radio" name="test" id="form-5" class="checkradio-input" />
                     <div class="checkradio-wrapper">
                         <div class="checkradio-title">Test</div>
-                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been customized.</div>
+                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been
+                            customized.</div>
                     </div>
                 </label>
                 <label for="form-6" class="checkradio indicator-rb has-indicator">
                     <input type="radio" name="test" id="form-6" class="checkradio-input" />
                     <div class="checkradio-wrapper">
                         <div class="checkradio-title">Test</div>
-                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been customized.</div>
+                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been
+                            customized.</div>
                     </div>
                 </label>
                 <label for="form-7" class="checkradio indicator-rb has-indicator">
                     <input type="radio" name="test" id="form-7" class="checkradio-input" />
                     <div class="checkradio-wrapper">
                         <div class="checkradio-title">Test</div>
-                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been customized.</div>
+                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been
+                            customized.</div>
                     </div>
                 </label>
                 <label for="form-8" class="checkradio has-indicator">
                     <input type="radio" name="test" id="form-8" class="checkradio-input" />
                     <div class="checkradio-wrapper">
                         <div class="checkradio-title">Test</div>
-                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been customized.</div>
+                        <div class="checkradio-desc">This is a sample of checkbox and radio button that has been
+                            customized.</div>
                     </div>
                 </label>
             </div>
         </div>
     </div>
 
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+    <script type="module">console.log($('div'))</script>
 </body>
+
 </html>

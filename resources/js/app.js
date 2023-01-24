@@ -1,3 +1,4 @@
-require('./bootstrap');
-require('./components');
-require('./icons');
+import './bootstrap';
+import './icons';
+import './components';
+import './nui';
