@@ -25,37 +25,6 @@
 			</div>
 			<div class="sidebar-widget"></div>
 			<div class="sidebar-body">
-				<ul class="metismenu" id="sidebar-menu">
-					<li class="title">Dashboard</li>
-					<li class="mm-active">
-						<a class="has-arrow" aria-expanded="true" href="javascript:void(0)">
-							<i class="fa-solid fa-tachometer-alt"></i>
-							<span>Dashboard</span>
-						</a>
-						<ul>
-							<li><a href="javascript:void(0)">Ecommerce</a></li>
-							<li><a href="javascript:void(0)">Company</a></li>
-						</ul>
-					</li>
-					<li>
-						<a class="has-arrow mm-collapsed" href="javascript:void(0)">
-							<i class="fa-solid fa-box"></i>
-							<span>Dashboard</span>
-						</a>
-						<ul>
-							<li class="mm-active">
-								<a class="has-arrow" href="javascript:void(0)">Testing</a>
-								<ul>
-									<li><a href="javascript:void(0)">Ecommerce</a></li>
-									<li><a href="javascript:void(0)">Company</a></li>
-								</ul>
-							</li>
-							<li><a href="javascript:void(0)">Testing</a></li>
-							<li><a href="javascript:void(0)">Testing</a></li>
-						</ul>
-					</li>
-					<li><a href="javascript:void(0)">Testing</a></li>
-				</ul>
 			</div>
 			<div class="sidebar-widget"></div>
 		</aside>
