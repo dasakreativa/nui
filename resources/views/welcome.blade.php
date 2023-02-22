@@ -663,8 +663,5 @@
         </div>
     </div>
 
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
-    <script type="module">console.log($('div'))</script>
 </body>
-
 </html>

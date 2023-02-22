@@ -1,3 +1,6 @@
+import 'metismenujs/sass'
+import { MetisMenu } from 'metismenujs'
+
 /**
  * Mengimpor MetisMenu
  *
@@ -6,13 +9,43 @@
  *
  * @since 1.0.0
  */
-import 'metismenujs/sass'
-import { MetisMenu } from 'metismenujs'
+const menuInit = () => {
+    const menu = document.getElementById('sidebar-menu');
 
-const menu = document.getElementById('sidebar-menu');
+    if(menu) {
+        new MetisMenu("#sidebar-menu");
+    }
+}
 
-if(menu) {
-    new MetisMenu("#sidebar-menu");
+/**
+ * Button Toggler initialization
+ *
+ * @since 1.0.0-20230220
+ * @author Dasa Kreativa Studio <dasakreativa@gmail.com>
+ */
+const sidebarTogglerInit = () => {
+    const toggler        = document.querySelectorAll('[data-toggle="sidebar"]');
+    const menuActive     = document.querySelectorAll('.mm-active');
+    const collapseActive = document.querySelectorAll('.mm-show');
+    const body           = document.querySelector('body');
+
+    toggler?.forEach((element) => {
+        element?.addEventListener('click', () => {
+            body?.classList.toggle('toggled');
+
+            console.log(menuActive, collapseActive)
+
+            // Remove active menu at li.mm-active
+            menuActive?.forEach((element) => {
+                element.classList.remove('mm-active');
+            });
+
+            // Remove active menu at li.mm-active
+            collapseActive?.forEach((element) => {
+                element.classList.remove('mm-show');
+            });
+        });
+    });
 }
 
 /**
@@ -22,17 +55,29 @@ if(menu) {
  * tidak membuat lupa developer web dalam membangun template ini.
  *
  * @since 1.0.0
+ * @author Dasa Kreativa Studio <dasakreativa@gmail.com>
  */
-window.addEventListener('load', () => {
-	const el = document.querySelectorAll('#sidebar-menu .mm-active')
+const classMenuInit = () => {
+    window.addEventListener('load', () => {
+        const el = document.querySelectorAll('#sidebar-menu .mm-active')
 
-	if(el.length > 0) {
-		el.forEach((a) => {
-			const submenu = a.querySelectorAll('ul');
+        el?.forEach((a) => {
+            const submenu = a.querySelectorAll('ul');
+            if(!submenu[0]?.classList.contains('mm-show')) submenu[0].classList.add('mm-show');
+        });
+    });
+}
 
-			if(submenu.length > 0) {
-				if(!submenu[0].classList.contains('mm-show')) submenu[0].classList.add('mm-show');
-			}
-		});
-	}
-});
+/**
+ * Initialize all sidebar init.
+ *
+ * @since 1.0.0-20230220
+ * @author Dasa Kreativa Studio <dasakreativa@gmail.com>
+ */
+function sidebarInit() {
+    classMenuInit();
+    menuInit();
+    sidebarTogglerInit();
+}
+
+sidebarInit();

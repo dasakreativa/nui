@@ -19,7 +19,7 @@
 					<img class="logo-lg" src="https://via.placeholder.com/150x60" alt="Logo Nusantara UI" />
 					<img class="logo-sm" src="https://via.placeholder.com/60x60" alt="Logo Nusantara UI" />
 				</a>
-				<button class="sidebar-button">
+				<button class="sidebar-button" data-toggle="sidebar">
 					<i class="fa-solid fa-bars"></i>
 				</button>
 			</div>
@@ -60,7 +60,11 @@
 			<div class="sidebar-widget"></div>
 		</aside>
 
-		<main id="content-wrapper"></main>
+		<div role="main" id="content-wrapper">
+            <header class="header-content"></header>
+            <main class="main-content"></main>
+            <footer class="footer-content"></footer>
+        </div>
 	</div>
 </body>
 </html>

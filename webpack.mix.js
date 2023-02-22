@@ -17,4 +17,4 @@ mix.setResourceRoot('../')
     .sourceMaps(false, 'source-map')
     .version();
 
-mix.browserSync('nui-laravel.test');
+mix.browserSync('nui.test');

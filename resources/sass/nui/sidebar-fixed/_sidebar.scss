@@ -118,6 +118,14 @@
 						&[aria-expanded=true] {
 							color: $dark;
 						}
+
+                        @media screen and (min-width: 768px) {
+                            @at-root .toggled & {
+                                span, &::after {
+                                    display: none;
+                                }
+                            }
+                        }
 					}
 
 					&.mm-active {
